@@ -13,20 +13,24 @@ protocol FirstViewProtocol: AnyObject {
 }
 
 protocol FirstPresenterProtocol: AnyObject{
-    init(view: FirstViewProtocol, router: RouterProtocol, networkService: NetworkServiceProtocol)
-    
+    init(view: FirstViewProtocol, router: RouterProtocol)
+    func goToNextVC()
 }
 
 class FirstPresenter: FirstPresenterProtocol {
+  
     
     weak var view: FirstViewProtocol?
-    var networkService: NetworkServiceProtocol?
     let router: RouterProtocol?
     
-    required init(view: FirstViewProtocol, router: RouterProtocol, networkService: NetworkServiceProtocol) {
+    required init(view: FirstViewProtocol, router: RouterProtocol) {
         self.view = view
         self.router = router
-        self.networkService = networkService
+
+    }
+    
+    func goToNextVC() {
+        router?.goToEnterNumberVC()
     }
     
 }

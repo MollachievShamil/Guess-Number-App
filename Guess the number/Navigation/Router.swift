@@ -15,6 +15,7 @@ protocol RouterMain {
 
 protocol RouterProtocol: RouterMain {
     func firstVC()
+    func goToEnterNumberVC()
 }
 
 class Router: RouterProtocol {
@@ -33,4 +34,13 @@ class Router: RouterProtocol {
             navigationController.viewControllers = [firstVC]
         }
     }
+    
+    func goToEnterNumberVC() {
+      
+        if let navigationController = navigationController {
+            guard let EnterNumberVC = assemblyBuilder?.createEnterNumberVC(router: self) else {return}
+            navigationController.pushViewController(EnterNumberVC, animated: true)
+        }
+    }
+    
 }

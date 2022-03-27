@@ -13,10 +13,62 @@ class FirstVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .green
+        addSubViews()
+        setConstraints()
+        
     }
     
+//    let gameNameLabel: UILabel = {
+//        let label = UILabel()
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        label.text = "gameName"
+//        label.font = UIFont.systemFont(ofSize: 20)
+//        return label
+//    }()
+    
+    let startGameButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Start New Game", for: .normal)
+        button.backgroundColor = .gray
+        button.layer.cornerRadius = 10
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(startNewGameTapped), for: .touchUpInside)
+        return button
+    }()
+    
+    @objc func startNewGameTapped() {
+        presenter.goToNextVC()
+    }
 }
 
+extension FirstVC {
+    
+    func addSubViews() {
+       // view.addSubview(gameNameLabel)
+        view.addSubview(startGameButton)
+        view.backgroundColor = .lightGray
+        navigationItem.title = "gameName"
+    }
+    
+    func setConstraints() {
+        
+//        NSLayoutConstraint.activate([
+//            gameNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+//            gameNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            gameNameLabel.heightAnchor.constraint(equalToConstant: 30),
+//            gameNameLabel.widthAnchor.constraint(equalToConstant: 110)
+//
+//        ])
+        
+        NSLayoutConstraint.activate([
+            startGameButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            startGameButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
+            startGameButton.heightAnchor.constraint(equalToConstant: 50),
+            startGameButton.widthAnchor.constraint(equalToConstant: 200)
+        ])
+    }
+}
+        
 extension FirstVC: FirstViewProtocol {
 }
