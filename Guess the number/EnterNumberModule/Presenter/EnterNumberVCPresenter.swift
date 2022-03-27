@@ -15,6 +15,7 @@ protocol EnterNumberVCProtocol: AnyObject {
 protocol EnterNumberPresenterProtocol: AnyObject{
     init(view: EnterNumberVCProtocol, router: RouterProtocol)
     func goToComputerGuess()
+    func goToUserGuess()
 }
 
 class EnterNumberPresenter: EnterNumberPresenterProtocol {
@@ -31,6 +32,10 @@ class EnterNumberPresenter: EnterNumberPresenterProtocol {
 
     func goToComputerGuess() {
         router?.goToComputerGuessVC()
+    }
+    
+    func goToUserGuess() {
+        router?.goToUserGuessVC()
     }
     
 }

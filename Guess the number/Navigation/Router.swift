@@ -17,6 +17,7 @@ protocol RouterProtocol: RouterMain {
     func firstVC()
     func goToEnterNumberVC()
     func goToComputerGuessVC()
+    func goToUserGuessVC()
 }
 
 class Router: RouterProtocol {
@@ -52,4 +53,12 @@ class Router: RouterProtocol {
         }
     }
     
+    
+    func goToUserGuessVC() {
+      
+        if let navigationController = navigationController {
+            guard let UserGuessVC = assemblyBuilder?.createUserGuessVC(router: self) else {return}
+            navigationController.pushViewController(UserGuessVC, animated: true)
+        }
+    }
 }

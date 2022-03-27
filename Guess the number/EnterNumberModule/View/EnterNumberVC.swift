@@ -46,7 +46,7 @@ class EnterNumberVC: UIViewController {
     }()
     
     @objc func enterTheNumberTapped() {
-       
+        presenter.goToUserGuess()
     }
 }
 
