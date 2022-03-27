@@ -14,9 +14,10 @@ protocol EnterNumberVCProtocol: AnyObject {
 
 protocol EnterNumberPresenterProtocol: AnyObject{
     init(view: EnterNumberVCProtocol, router: RouterProtocol)
+    func goToComputerGuess()
 }
 
-class EnterNumberVCPresenter: EnterNumberPresenterProtocol {
+class EnterNumberPresenter: EnterNumberPresenterProtocol {
   
     
     weak var view: EnterNumberVCProtocol?
@@ -28,5 +29,8 @@ class EnterNumberVCPresenter: EnterNumberPresenterProtocol {
 
     }
 
+    func goToComputerGuess() {
+        router?.goToComputerGuessVC()
+    }
     
 }

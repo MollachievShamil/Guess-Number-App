@@ -17,6 +17,8 @@
 		B339152C27F0A4A600CB340B /* FirstVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339152B27F0A4A600CB340B /* FirstVCPresenter.swift */; };
 		B339153127F0B2D400CB340B /* EnterNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339153027F0B2D400CB340B /* EnterNumberVC.swift */; };
 		B339153527F0B35900CB340B /* EnterNumberVCPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339153427F0B35900CB340B /* EnterNumberVCPresenter.swift */; };
+		B339153827F0BDB500CB340B /* ComputerGuessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339153727F0BDB500CB340B /* ComputerGuessVC.swift */; };
+		B339153F27F0BE1A00CB340B /* ComputerGuessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339153E27F0BE1A00CB340B /* ComputerGuessPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		B339152B27F0A4A600CB340B /* FirstVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVCPresenter.swift; sourceTree = "<group>"; };
 		B339153027F0B2D400CB340B /* EnterNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNumberVC.swift; sourceTree = "<group>"; };
 		B339153427F0B35900CB340B /* EnterNumberVCPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterNumberVCPresenter.swift; sourceTree = "<group>"; };
+		B339153727F0BDB500CB340B /* ComputerGuessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerGuessVC.swift; sourceTree = "<group>"; };
+		B339153E27F0BE1A00CB340B /* ComputerGuessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerGuessPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +70,9 @@
 			children = (
 				B339152627F0A3F900CB340B /* Navigation */,
 				B339152327F0A3C600CB340B /* ModuleBuilder */,
-				B339152927F0A44600CB340B /* FirstVC */,
-				B339153327F0B2E300CB340B /* EnterNumberVC */,
+				B339152927F0A44600CB340B /* FirstModule */,
+				B339153327F0B2E300CB340B /* EnterNumberModule */,
+				B339153A27F0BDC400CB340B /* ComputerGuessModule */,
 				B339150D27F0959100CB340B /* AppDelegate.swift */,
 				B339150F27F0959100CB340B /* SceneDelegate.swift */,
 				B339151627F0959200CB340B /* Assets.xcassets */,
@@ -93,13 +98,13 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		B339152927F0A44600CB340B /* FirstVC */ = {
+		B339152927F0A44600CB340B /* FirstModule */ = {
 			isa = PBXGroup;
 			children = (
 				B339152D27F0A4AD00CB340B /* Presenter */,
 				B339152A27F0A45100CB340B /* View */,
 			);
-			path = FirstVC;
+			path = FirstModule;
 			sourceTree = "<group>";
 		};
 		B339152A27F0A45100CB340B /* View */ = {
@@ -126,19 +131,44 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		B339153327F0B2E300CB340B /* EnterNumberVC */ = {
+		B339153327F0B2E300CB340B /* EnterNumberModule */ = {
 			isa = PBXGroup;
 			children = (
 				B339153627F0B36000CB340B /* Presenter */,
 				B339153227F0B2DD00CB340B /* View */,
 			);
-			path = EnterNumberVC;
+			path = EnterNumberModule;
 			sourceTree = "<group>";
 		};
 		B339153627F0B36000CB340B /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				B339153427F0B35900CB340B /* EnterNumberVCPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B339153927F0BDBD00CB340B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B339153727F0BDB500CB340B /* ComputerGuessVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B339153A27F0BDC400CB340B /* ComputerGuessModule */ = {
+			isa = PBXGroup;
+			children = (
+				B339153D27F0BE0000CB340B /* Presenter */,
+				B339153927F0BDBD00CB340B /* View */,
+			);
+			path = ComputerGuessModule;
+			sourceTree = "<group>";
+		};
+		B339153D27F0BE0000CB340B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B339153E27F0BE1A00CB340B /* ComputerGuessPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -218,8 +248,10 @@
 				B339152527F0A3F400CB340B /* Router.swift in Sources */,
 				B339152C27F0A4A600CB340B /* FirstVCPresenter.swift in Sources */,
 				B339151027F0959100CB340B /* SceneDelegate.swift in Sources */,
+				B339153F27F0BE1A00CB340B /* ComputerGuessPresenter.swift in Sources */,
 				B339153127F0B2D400CB340B /* EnterNumberVC.swift in Sources */,
 				B339152227F0A3BC00CB340B /* AssemblyBuilder.swift in Sources */,
+				B339153827F0BDB500CB340B /* ComputerGuessVC.swift in Sources */,
 				B339153527F0B35900CB340B /* EnterNumberVCPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

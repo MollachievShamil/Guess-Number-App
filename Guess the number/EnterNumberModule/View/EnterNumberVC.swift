@@ -21,7 +21,7 @@ class EnterNumberVC: UIViewController {
     let guessTheNumberButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Gusee the number", for: .normal)
+        button.setTitle("Guess the number", for: .normal)
         button.backgroundColor = .gray
         button.layer.cornerRadius = 10
         button.tintColor = .white
@@ -30,7 +30,7 @@ class EnterNumberVC: UIViewController {
     }()
     
     @objc func guessTheNumberTapped() {
-        
+        presenter.goToComputerGuess()
     }
     
     
@@ -63,7 +63,7 @@ extension EnterNumberVC {
     func setConstraints() {
         
         NSLayoutConstraint.activate([
-            guessTheNumberButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            guessTheNumberButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             guessTheNumberButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             guessTheNumberButton.heightAnchor.constraint(equalToConstant: 50),
             guessTheNumberButton.widthAnchor.constraint(equalToConstant: 200)
