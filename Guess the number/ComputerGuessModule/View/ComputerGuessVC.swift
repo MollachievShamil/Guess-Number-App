@@ -57,14 +57,13 @@ class ComputerGuessVC: UIViewController {
         button.backgroundColor = .gray
         button.layer.cornerRadius = 10
         button.tintColor = .white
-        button.addTarget(self, action: #selector(biggerButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(lowerButtonButtonTapped), for: .touchUpInside)
         return button
     }()
     
     @objc func lowerButtonButtonTapped() {
         
     }
-
     
     let equalButton: UIButton = {
         let button = UIButton(type: .system)
@@ -73,11 +72,13 @@ class ComputerGuessVC: UIViewController {
         button.backgroundColor = .gray
         button.layer.cornerRadius = 10
         button.tintColor = .white
-        button.addTarget(self, action: #selector(biggerButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(equalButtonButtonTapped), for: .touchUpInside)
         return button
     }()
     
     @objc func equalButtonButtonTapped() {
+        presenter.goToEndGameVC()
+        
         
     }
     

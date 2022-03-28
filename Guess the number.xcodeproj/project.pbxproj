@@ -22,7 +22,8 @@
 		B339154127F0C14300CB340B /* UserGuessVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339154027F0C14300CB340B /* UserGuessVC.swift */; };
 		B339154527F0C16E00CB340B /* UserGuessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339154427F0C16E00CB340B /* UserGuessPresenter.swift */; };
 		B339154827F0CFF500CB340B /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339154727F0CFF500CB340B /* StackView + Extension.swift */; };
-		B339154A27F0D3EA00CB340B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339154927F0D3EA00CB340B /* Alert.swift */; };
+		B3A6293527F1E3F700BA2C37 /* EndGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A6293427F1E3F700BA2C37 /* EndGameVC.swift */; };
+		B3A6293827F1E41200BA2C37 /* EndGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A6293727F1E41200BA2C37 /* EndGamePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +44,8 @@
 		B339154027F0C14300CB340B /* UserGuessVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuessVC.swift; sourceTree = "<group>"; };
 		B339154427F0C16E00CB340B /* UserGuessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuessPresenter.swift; sourceTree = "<group>"; };
 		B339154727F0CFF500CB340B /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
-		B339154927F0D3EA00CB340B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		B3A6293427F1E3F700BA2C37 /* EndGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameVC.swift; sourceTree = "<group>"; };
+		B3A6293727F1E41200BA2C37 /* EndGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGamePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,6 @@
 		B339150C27F0959100CB340B /* Guess the number */ = {
 			isa = PBXGroup;
 			children = (
-				B339154927F0D3EA00CB340B /* Alert.swift */,
 				B339154727F0CFF500CB340B /* StackView + Extension.swift */,
 				B339152627F0A3F900CB340B /* Navigation */,
 				B339152327F0A3C600CB340B /* ModuleBuilder */,
@@ -84,6 +85,7 @@
 				B339153327F0B2E300CB340B /* EnterNumberModule */,
 				B339153A27F0BDC400CB340B /* ComputerGuessModule */,
 				B339154327F0C15100CB340B /* UserGuessModule */,
+				B3A6293A27F1E42300BA2C37 /* EndGameModule */,
 				B339150D27F0959100CB340B /* AppDelegate.swift */,
 				B339150F27F0959100CB340B /* SceneDelegate.swift */,
 				B339151627F0959200CB340B /* Assets.xcassets */,
@@ -209,6 +211,31 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		B3A6293627F1E40100BA2C37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3A6293427F1E3F700BA2C37 /* EndGameVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3A6293927F1E41900BA2C37 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B3A6293727F1E41200BA2C37 /* EndGamePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B3A6293A27F1E42300BA2C37 /* EndGameModule */ = {
+			isa = PBXGroup;
+			children = (
+				B3A6293927F1E41900BA2C37 /* Presenter */,
+				B3A6293627F1E40100BA2C37 /* View */,
+			);
+			path = EndGameModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -285,9 +312,10 @@
 				B339152527F0A3F400CB340B /* Router.swift in Sources */,
 				B339152C27F0A4A600CB340B /* FirstVCPresenter.swift in Sources */,
 				B339154527F0C16E00CB340B /* UserGuessPresenter.swift in Sources */,
-				B339154A27F0D3EA00CB340B /* Alert.swift in Sources */,
+				B3A6293527F1E3F700BA2C37 /* EndGameVC.swift in Sources */,
 				B339151027F0959100CB340B /* SceneDelegate.swift in Sources */,
 				B339153F27F0BE1A00CB340B /* ComputerGuessPresenter.swift in Sources */,
+				B3A6293827F1E41200BA2C37 /* EndGamePresenter.swift in Sources */,
 				B339153127F0B2D400CB340B /* EnterNumberVC.swift in Sources */,
 				B339152227F0A3BC00CB340B /* AssemblyBuilder.swift in Sources */,
 				B339154827F0CFF500CB340B /* StackView + Extension.swift in Sources */,

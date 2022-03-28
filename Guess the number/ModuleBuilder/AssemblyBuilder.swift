@@ -14,6 +14,7 @@ protocol AssemblyBuilderProtocol {
     func createEnterNumberVC(router: RouterProtocol) -> UIViewController
     func createComputerGuessVC(router: RouterProtocol) -> UIViewController
     func createUserGuessVC(router: RouterProtocol) -> UIViewController
+    func createEndGameVC(router: RouterProtocol) -> UIViewController
 }
 
 class AssemblyModelBuilder: AssemblyBuilderProtocol {
@@ -43,6 +44,13 @@ class AssemblyModelBuilder: AssemblyBuilderProtocol {
     func createUserGuessVC(router: RouterProtocol) -> UIViewController{
         let view = UserGuessVC()
         let presenter = UserGuessPresenter(view: view, router: router)
+        view.presenter = presenter
+        return view
+    }
+    
+    func createEndGameVC(router: RouterProtocol) -> UIViewController{
+        let view = EndGameVC()
+        let presenter = EndGamePresenter(view: view, router: router)
         view.presenter = presenter
         return view
     }

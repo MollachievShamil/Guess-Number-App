@@ -27,6 +27,4 @@ class UserGuessPresenter: UserGuessPresenterProtocol {
         self.router = router
 
     }
-
-    
 }

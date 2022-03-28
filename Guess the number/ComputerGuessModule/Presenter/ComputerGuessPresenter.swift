@@ -14,6 +14,7 @@ protocol ComputerGuessVCProtocol: AnyObject {
 
 protocol ComputerGuessPresenterProtocol: AnyObject{
     init(view: ComputerGuessVCProtocol, router: RouterProtocol)
+    func goToEndGameVC()
 }
 
 class ComputerGuessPresenter: ComputerGuessPresenterProtocol {
@@ -25,8 +26,9 @@ class ComputerGuessPresenter: ComputerGuessPresenterProtocol {
     required init(view: ComputerGuessVCProtocol, router: RouterProtocol) {
         self.view = view
         self.router = router
-
     }
 
-    
+    func goToEndGameVC() {
+        router?.goToEndGameVC()
+    }
 }

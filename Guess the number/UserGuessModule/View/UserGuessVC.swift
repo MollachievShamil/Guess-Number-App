@@ -46,8 +46,32 @@ class UserGuessVC: UIViewController {
         return button
     }()
     
+    let bigNumberLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = ""
+        label.font = UIFont.systemFont(ofSize: 60)
+        label.textAlignment = .center
+        return label
+    }()
+    
     @objc func enterNumberTapped() {
-        alertOk(title: "dsds", massege: "Sdsd")
+        alert(title: "Please enter any number")
+    }
+    
+    func alert(title: String){
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        
+        alert.addTextField { text in
+            text.keyboardType = .numberPad
+        }
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert!.textFields![0]
+            self.bigNumberLabel.text =  textField.text
+        }))
+        
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -58,6 +82,7 @@ extension UserGuessVC {
         view.addSubview(userGuessLabel)
         view.addSubview(numberIsLabel)
         view.addSubview(enterNumberButton)
+        view.addSubview(bigNumberLabel)
         
         view.backgroundColor = .lightGray
         navigationItem.hidesBackButton = true
@@ -87,6 +112,13 @@ func setConstraints() {
         enterNumberButton.heightAnchor.constraint(equalToConstant: 50),
         enterNumberButton.widthAnchor.constraint(equalToConstant: 200)
 
+    ])
+    
+    NSLayoutConstraint.activate([
+        bigNumberLabel.bottomAnchor.constraint(equalTo: enterNumberButton.topAnchor, constant: 0),
+        bigNumberLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        bigNumberLabel.heightAnchor.constraint(equalToConstant: 100),
+        bigNumberLabel.widthAnchor.constraint(equalToConstant: 200)
     ])
 }
 }
