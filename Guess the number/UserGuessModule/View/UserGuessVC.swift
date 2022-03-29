@@ -15,8 +15,7 @@ class UserGuessVC: UIViewController {
         super.viewDidLoad()
         addSubViews()
         setConstraints()
-        Calculation.shared.getRandomNumber()
-        
+
     }
     
     let userGuessLabel: UILabel = {
@@ -32,7 +31,7 @@ class UserGuessVC: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "number is (< = >)"
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 30)
         label.textAlignment = .center
         return label
     }()
@@ -78,11 +77,28 @@ class UserGuessVC: UIViewController {
     }
     
     func okButtonInAlertTapped(text: String) {
-        presenter.goToNextScreen()
+        
         guard let int = Int(text) else { return }
         if int > Calculation.shared.randomNumber {
+            numberIsLabel.text = "number is (>)"
+          
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+                self?.presenter.goToNextScreen()
+            }
+        }
+        if int < Calculation.shared.randomNumber {
+            numberIsLabel.text = "number is (<)"
+         
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+                self?.presenter.goToNextScreen()
+            }
+        }
+        if int == Calculation.shared.randomNumber {
+            presenter.goToEndGameScreen()
         }
         
+        print("computer random number is \(Calculation.shared.randomNumber)")
+      
     }
 }
 
@@ -110,10 +126,10 @@ func setConstraints() {
     ])
     
     NSLayoutConstraint.activate([
-        numberIsLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
+        numberIsLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
         numberIsLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        numberIsLabel.heightAnchor.constraint(equalToConstant: 50),
-        numberIsLabel.widthAnchor.constraint(equalToConstant: 200)
+        numberIsLabel.heightAnchor.constraint(equalToConstant: 100),
+        numberIsLabel.widthAnchor.constraint(equalToConstant: 300)
 
     ])
     

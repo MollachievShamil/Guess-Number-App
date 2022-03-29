@@ -15,6 +15,7 @@ protocol UserGuessVCProtocol: AnyObject {
 protocol UserGuessPresenterProtocol: AnyObject{
     init(view: UserGuessVCProtocol, router: RouterProtocol)
     func goToNextScreen()
+    func goToEndGameScreen()
 }
 
 class UserGuessPresenter: UserGuessPresenterProtocol {
@@ -30,5 +31,9 @@ class UserGuessPresenter: UserGuessPresenterProtocol {
     
     func goToNextScreen() {
         router?.goToComputerGuessVC()
+    }
+    
+    func goToEndGameScreen() {
+        router?.goToEndGameVC()
     }
 }

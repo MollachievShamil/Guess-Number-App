@@ -15,6 +15,7 @@ class FirstVC: UIViewController {
         super.viewDidLoad()
         addSubViews()
         setConstraints()
+        Calculation.shared.getRandomNumber()
         
     }
     
@@ -52,14 +53,6 @@ extension FirstVC {
     }
     
     func setConstraints() {
-        
-//        NSLayoutConstraint.activate([
-//            gameNameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-//            gameNameLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            gameNameLabel.heightAnchor.constraint(equalToConstant: 30),
-//            gameNameLabel.widthAnchor.constraint(equalToConstant: 110)
-//
-//        ])
         
         NSLayoutConstraint.activate([
             startGameButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),

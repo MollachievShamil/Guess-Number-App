@@ -11,13 +11,13 @@ import Foundation
 class Calculation {
     static var shared = Calculation()
    
+    var randomNumber: Int!
+    var computerGuessNumber = 0
+    
     var leftBorder = -1000000
     var rightBorder = 1000000
     
-   // var array = Array(-1000000 ... 1000000)
     
-    var computerGuessNumber = 0
-  
     func numberIsLower() {
         rightBorder = computerGuessNumber
         calc()
@@ -36,9 +36,9 @@ class Calculation {
         computerGuessNumber = array[mid]
     }
     
-    var randomNumber: Int!
+
     func getRandomNumber(){
-        randomNumber = Int.random(in: Int.min ... Int.max)
+        randomNumber = Int.random(in: -1000000 ... 1000000)
     }
     
     func prepareForNewGame() {
