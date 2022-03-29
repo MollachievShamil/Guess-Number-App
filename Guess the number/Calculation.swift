@@ -10,7 +10,8 @@ import Foundation
 
 class Calculation {
     static var shared = Calculation()
-   
+
+    
     var randomNumber: Int!
     var computerGuessNumber = 0
     
@@ -46,5 +47,7 @@ class Calculation {
         rightBorder = 1000000
         computerGuessNumber = 0
     }
+    
+    
     
 }

@@ -8,26 +8,25 @@
 import Foundation
 import UIKit
 
-protocol EnterNumberVCProtocol: AnyObject {
+protocol SelectVCProtocol: AnyObject {
     
 }
 
-protocol EnterNumberPresenterProtocol: AnyObject{
-    init(view: EnterNumberVCProtocol, router: RouterProtocol)
+protocol SelectPresenterProtocol: AnyObject{
+    init(view: SelectVCProtocol, router: RouterProtocol)
     func goToComputerGuess()
     func goToUserGuess()
 }
 
-class EnterNumberPresenter: EnterNumberPresenterProtocol {
+class SelectPresenter: SelectPresenterProtocol {
   
     
-    weak var view: EnterNumberVCProtocol?
+    weak var view: SelectVCProtocol?
     let router: RouterProtocol?
     
-    required init(view: EnterNumberVCProtocol, router: RouterProtocol) {
+    required init(view: SelectVCProtocol, router: RouterProtocol) {
         self.view = view
         self.router = router
-
     }
 
     func goToComputerGuess() {

@@ -30,10 +30,13 @@ class UserGuessPresenter: UserGuessPresenterProtocol {
     }
     
     func goToNextScreen() {
-        router?.goToComputerGuessVC()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            self?.router?.goToComputerGuessVC()
+        }
+      
     }
     
     func goToEndGameScreen() {
-        router?.goToEndGameVC()
+        router?.goToEndGameVC(text: "You win")
     }
 }

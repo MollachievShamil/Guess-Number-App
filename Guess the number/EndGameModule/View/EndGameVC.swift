@@ -15,12 +15,12 @@ class EndGameVC: UIViewController {
         addSubViews()
         setConstraints()
         presenter.prepareForNewGame()
+        
     }
     
     let winLoseLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "You Lose"
         label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .center
         return label
@@ -73,4 +73,7 @@ extension EndGameVC {
     }
 }
 extension EndGameVC: EndGameVCProtocol {
+    func getText(text: String) {
+        winLoseLabel.text = text
+    }
 }

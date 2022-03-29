@@ -33,7 +33,7 @@ class ComputerGuessPresenter: ComputerGuessPresenterProtocol {
     }
 
     func goToEndGameVC() {
-        router?.goToEndGameVC()
+        router?.goToEndGameVC(text: "You Lose")
     }
     
     func goToUserGuess(){

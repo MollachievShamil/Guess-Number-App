@@ -30,7 +30,7 @@ class UserGuessVC: UIViewController {
     let numberIsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "number is (< = >)"
+        //label.text = "number is (< = >)"
         label.font = UIFont.systemFont(ofSize: 30)
         label.textAlignment = .center
         return label
@@ -80,24 +80,19 @@ class UserGuessVC: UIViewController {
         
         guard let int = Int(text) else { return }
         if int > Calculation.shared.randomNumber {
-            numberIsLabel.text = "number is (>)"
-          
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-                self?.presenter.goToNextScreen()
-            }
+            numberIsLabel.text = "number is (<)"
+            presenter.goToNextScreen()
         }
         if int < Calculation.shared.randomNumber {
-            numberIsLabel.text = "number is (<)"
-         
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-                self?.presenter.goToNextScreen()
-            }
+            numberIsLabel.text = "number is (>)"
+            presenter.goToNextScreen()
         }
+        
         if int == Calculation.shared.randomNumber {
             presenter.goToEndGameScreen()
         }
         
-        print("computer random number is \(Calculation.shared.randomNumber)")
+        print("computer random number is \(Calculation.shared.randomNumber!)")
       
     }
 }
@@ -145,7 +140,7 @@ func setConstraints() {
         bigNumberLabel.bottomAnchor.constraint(equalTo: enterNumberButton.topAnchor, constant: 0),
         bigNumberLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         bigNumberLabel.heightAnchor.constraint(equalToConstant: 100),
-        bigNumberLabel.widthAnchor.constraint(equalToConstant: 200)
+        bigNumberLabel.widthAnchor.constraint(equalTo: view.widthAnchor)
     ])
 }
 }

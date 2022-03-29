@@ -19,14 +19,6 @@ class FirstVC: UIViewController {
         
     }
     
-//    let gameNameLabel: UILabel = {
-//        let label = UILabel()
-//        label.translatesAutoresizingMaskIntoConstraints = false
-//        label.text = "gameName"
-//        label.font = UIFont.systemFont(ofSize: 20)
-//        return label
-//    }()
-    
     let startGameButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false

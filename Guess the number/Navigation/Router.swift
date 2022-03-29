@@ -18,7 +18,7 @@ protocol RouterProtocol: RouterMain {
     func goToEnterNumberVC()
     func goToComputerGuessVC()
     func goToUserGuessVC()
-    func goToEndGameVC()
+    func goToEndGameVC(text: String)
     func popToRoot() 
 }
 
@@ -64,10 +64,10 @@ class Router: RouterProtocol {
         }
     }
     
-    func goToEndGameVC() {
+    func goToEndGameVC(text: String) {
       
         if let navigationController = navigationController {
-            guard let EndGameVC = assemblyBuilder?.createEndGameVC(router: self) else {return}
+            guard let EndGameVC = assemblyBuilder?.createEndGameVC(router: self, text: text) else {return}
             navigationController.pushViewController(EndGameVC, animated: true)
         }
     }

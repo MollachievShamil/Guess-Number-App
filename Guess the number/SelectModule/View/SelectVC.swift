@@ -7,9 +7,9 @@
 
 import UIKit
 
-class EnterNumberVC: UIViewController {
+class SelectVC: UIViewController {
     
-    var presenter: EnterNumberPresenterProtocol!
+    var presenter: SelectPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class EnterNumberVC: UIViewController {
     }
 }
 
-extension EnterNumberVC {
+extension SelectVC {
     
     func addSubViews() {
         view.addSubview(guessTheNumberButton)
@@ -80,5 +80,5 @@ extension EnterNumberVC {
 }
 
 
-extension EnterNumberVC: EnterNumberVCProtocol {
+extension SelectVC: SelectVCProtocol {
 }
