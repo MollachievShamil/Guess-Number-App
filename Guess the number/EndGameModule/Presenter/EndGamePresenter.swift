@@ -14,6 +14,8 @@ protocol EndGameVCProtocol: AnyObject {
 
 protocol EndGamePresenterProtocol: AnyObject{
     init(view: EndGameVCProtocol, router: RouterProtocol)
+    func goToEnterNumberModule()
+    func prepareForNewGame()
 }
 
 class EndGamePresenter: EndGamePresenterProtocol {
@@ -25,8 +27,14 @@ class EndGamePresenter: EndGamePresenterProtocol {
     required init(view: EndGameVCProtocol, router: RouterProtocol) {
         self.view = view
         self.router = router
-
     }
 
+    func goToEnterNumberModule() {
+        router?.popToRoot()
+    }
+    
+    func prepareForNewGame() {
+        Calculation.shared.prepareForNewGame()
+    }
     
 }

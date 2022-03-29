@@ -24,6 +24,7 @@
 		B339154827F0CFF500CB340B /* StackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B339154727F0CFF500CB340B /* StackView + Extension.swift */; };
 		B3A6293527F1E3F700BA2C37 /* EndGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A6293427F1E3F700BA2C37 /* EndGameVC.swift */; };
 		B3A6293827F1E41200BA2C37 /* EndGamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A6293727F1E41200BA2C37 /* EndGamePresenter.swift */; };
+		B3A6293C27F1F14E00BA2C37 /* Calculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A6293B27F1F14E00BA2C37 /* Calculation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		B339154727F0CFF500CB340B /* StackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView + Extension.swift"; sourceTree = "<group>"; };
 		B3A6293427F1E3F700BA2C37 /* EndGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameVC.swift; sourceTree = "<group>"; };
 		B3A6293727F1E41200BA2C37 /* EndGamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGamePresenter.swift; sourceTree = "<group>"; };
+		B3A6293B27F1F14E00BA2C37 /* Calculation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		B339150C27F0959100CB340B /* Guess the number */ = {
 			isa = PBXGroup;
 			children = (
+				B3A6293B27F1F14E00BA2C37 /* Calculation.swift */,
 				B339154727F0CFF500CB340B /* StackView + Extension.swift */,
 				B339152627F0A3F900CB340B /* Navigation */,
 				B339152327F0A3C600CB340B /* ModuleBuilder */,
@@ -317,6 +320,7 @@
 				B339153F27F0BE1A00CB340B /* ComputerGuessPresenter.swift in Sources */,
 				B3A6293827F1E41200BA2C37 /* EndGamePresenter.swift in Sources */,
 				B339153127F0B2D400CB340B /* EnterNumberVC.swift in Sources */,
+				B3A6293C27F1F14E00BA2C37 /* Calculation.swift in Sources */,
 				B339152227F0A3BC00CB340B /* AssemblyBuilder.swift in Sources */,
 				B339154827F0CFF500CB340B /* StackView + Extension.swift in Sources */,
 				B339153827F0BDB500CB340B /* ComputerGuessVC.swift in Sources */,

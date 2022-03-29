@@ -15,6 +15,10 @@ protocol ComputerGuessVCProtocol: AnyObject {
 protocol ComputerGuessPresenterProtocol: AnyObject{
     init(view: ComputerGuessVCProtocol, router: RouterProtocol)
     func goToEndGameVC()
+    func goToUserGuess()
+    func getNumber() -> String
+    func numberIsLower()
+    func numberIsBigger()
 }
 
 class ComputerGuessPresenter: ComputerGuessPresenterProtocol {
@@ -30,5 +34,21 @@ class ComputerGuessPresenter: ComputerGuessPresenterProtocol {
 
     func goToEndGameVC() {
         router?.goToEndGameVC()
+    }
+    
+    func goToUserGuess(){
+        router?.goToUserGuessVC()
+    }
+    
+    func getNumber() -> String {
+       return "Your number is " + String(Calculation.shared.computerGuessNumber) + " ?"
+    }
+    
+    func numberIsLower() {
+        Calculation.shared.numberIsLower()
+    }
+    
+    func numberIsBigger() {
+        Calculation.shared.numberIsBigger()
     }
 }

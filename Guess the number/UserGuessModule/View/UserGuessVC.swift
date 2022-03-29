@@ -15,6 +15,8 @@ class UserGuessVC: UIViewController {
         super.viewDidLoad()
         addSubViews()
         setConstraints()
+        Calculation.shared.getRandomNumber()
+        
     }
     
     let userGuessLabel: UILabel = {
@@ -69,9 +71,18 @@ class UserGuessVC: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
             let textField = alert!.textFields![0]
             self.bigNumberLabel.text =  textField.text
+            self.okButtonInAlertTapped(text: textField.text ?? "0")
         }))
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    func okButtonInAlertTapped(text: String) {
+        presenter.goToNextScreen()
+        guard let int = Int(text) else { return }
+        if int > Calculation.shared.randomNumber {
+        }
+        
     }
 }
 

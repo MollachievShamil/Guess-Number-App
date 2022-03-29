@@ -16,6 +16,14 @@ class ComputerGuessVC: UIViewController {
         addSubViews()
         setConstraints()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getNumber()
+    }
+    
+    func getNumber() {
+        numberLabel.text = presenter.getNumber()
+    }
     
     let computerGuessLabel: UILabel = {
         let label = UILabel()
@@ -29,7 +37,6 @@ class ComputerGuessVC: UIViewController {
     let numberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "number is -27"
         label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .center
         return label
@@ -47,7 +54,8 @@ class ComputerGuessVC: UIViewController {
     }()
     
     @objc func biggerButtonTapped() {
-        
+        presenter.numberIsBigger()
+        presenter.goToUserGuess()
     }
     
     let lowerButton: UIButton = {
@@ -62,7 +70,8 @@ class ComputerGuessVC: UIViewController {
     }()
     
     @objc func lowerButtonButtonTapped() {
-        
+        presenter.numberIsLower()
+        presenter.goToUserGuess()
     }
     
     let equalButton: UIButton = {
@@ -116,7 +125,7 @@ extension ComputerGuessVC {
             numberLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             numberLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             numberLabel.heightAnchor.constraint(equalToConstant: 50),
-            numberLabel.widthAnchor.constraint(equalToConstant: 200)
+            numberLabel.widthAnchor.constraint(equalToConstant: 300)
 
         ])
         

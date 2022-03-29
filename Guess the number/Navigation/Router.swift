@@ -19,6 +19,7 @@ protocol RouterProtocol: RouterMain {
     func goToComputerGuessVC()
     func goToUserGuessVC()
     func goToEndGameVC()
+    func popToRoot() 
 }
 
 class Router: RouterProtocol {
@@ -70,4 +71,10 @@ class Router: RouterProtocol {
             navigationController.pushViewController(EndGameVC, animated: true)
         }
     }
+   
+        func popToRoot() {
+            if let navigationController = navigationController {
+                navigationController.popToRootViewController(animated: true)
+            }
+        }
 }

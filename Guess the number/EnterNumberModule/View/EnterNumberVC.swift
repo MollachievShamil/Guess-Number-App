@@ -63,7 +63,7 @@ extension EnterNumberVC {
     func setConstraints() {
         
         NSLayoutConstraint.activate([
-            guessTheNumberButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            guessTheNumberButton.bottomAnchor.constraint(equalTo: view.centerYAnchor, constant: -30),
             guessTheNumberButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             guessTheNumberButton.heightAnchor.constraint(equalToConstant: 50),
             guessTheNumberButton.widthAnchor.constraint(equalToConstant: 200)
@@ -72,7 +72,7 @@ extension EnterNumberVC {
         
         NSLayoutConstraint.activate([
             enterTheNumberButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            enterTheNumberButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
+            enterTheNumberButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: 30),
             enterTheNumberButton.heightAnchor.constraint(equalToConstant: 50),
             enterTheNumberButton.widthAnchor.constraint(equalToConstant: 200)
         ])
